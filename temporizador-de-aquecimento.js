@@ -8,16 +8,16 @@
 // Crie um programa que simule esse funcionamento do temporizador de aquecimento, garantindo que ele continue funcionando até atingir pelo menos 5 segundos.
 
 const tempoMinimo = 5;
-const temperaturaIdeal = 3;
-
-let segundos = 0;
+let tempoDecorrido = 0;
 
 do {
-  segundos++;
-  console.log('Aquecendo...', 'segundo', segundos);
-  if (segundos === 3) {
-    console.log('Temperatura ideal atingida.');
+  tempoDecorrido++;
+  console.log('Aquecendo...', 'segundo', tempoDecorrido);
+  switch (tempoDecorrido) {
+    case 3:
+      console.log('Temperatura ideal atingida.');
+      break;
   }
-} while (segundos < tempoMinimo);
+} while (tempoDecorrido < tempoMinimo);
 
-console.log('Tempo total de aquecimento: ', segundos, 'segundos.');
+console.log('Tempo total de aquecimento: ', tempoDecorrido, 'segundos');

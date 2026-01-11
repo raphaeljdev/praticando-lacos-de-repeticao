@@ -9,11 +9,12 @@
 // Dia 10: R$55
 // Crie um programa que calcule o total economizado ao final de 10 dias.
 
-let diasPassados = 10;
-let diaAtual = 1;
-let dinheiroAtual = 0;
+const diaTotal = 10;
+let diaAtual = 0;
+let economia = 0;
 
-for (diaAtual; diaAtual <= diasPassados; diaAtual++) {
-  dinheiroAtual += diaAtual;
-  console.log('Dia', diaAtual, '-->', 'R$', dinheiroAtual);
-}
+do {
+  diaAtual++;
+  economia += diaAtual;
+  console.log('Dia', diaAtual, ':', '-->', 'R$', economia);
+} while (diaAtual < diaTotal);
