@@ -2,13 +2,22 @@
 
 // Seu desafio é escolher o laço de repetição mais adequado para resolver este problema.
 
-const tentativas = ['1234', 'admin', 'secreto'];
-const senhaCorreta = 'secreto';
+const tentativas = ['1234', 'admin', 'secreto', 'feijao'];
+const senhaCorreta = 'feijao';
+let acessoLiberado = false;
+let contador = 0;
 
-tentativas.forEach((tentativa, index) => {
-  if (tentativa === senhaCorreta) {
+while (contador < tentativas.length && contador < 3) {
+  if (tentativas[contador] === senhaCorreta) {
     console.log('Acesso permitido!');
+    acessoLiberado = true;
+    break;
   } else {
-    console.log('Tentativa', index + 1, 'inválida.');
+    console.log('Tentativa', contador + 1, 'inválida.');
   }
-});
+  contador++;
+}
+
+if (!acessoLiberado) {
+  console.log('Acesso bloqueado. Número máximo de tentativas atingido.');
+}
